@@ -20,7 +20,7 @@ const NewCompany: React.FC<Props> = ({ closeDrawer, companySelected }) => {
 
   const { file, selectFile, uploadToS3 } = useUploadFile('cv/companies');
   const { handleSubmit, reset, control, setValue, formState: { errors } } = useForm()
-  const [ color, setColor] = useState<string | undefined>('#1776ff');
+  const [ color, setColor] = useState<string>('#1776ff');
 
   const onSubmit = async (company: ICompanyFlex) => {
 
@@ -48,7 +48,7 @@ const NewCompany: React.FC<Props> = ({ closeDrawer, companySelected }) => {
     if(companySelected) {
       setValue('name', companySelected.name);
       setValue('color', companySelected?.color);
-      setColor(companySelected?.color);
+      setColor(companySelected.color ? companySelected?.color: '#1776ff');
     } else {
       reset();
     }
