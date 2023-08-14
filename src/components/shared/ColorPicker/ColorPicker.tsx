@@ -36,7 +36,7 @@ const ColorPicker: React.FC<Props> = ({ onChange, color }) => {
       { 
         displayColorPicker &&
         <div className='popover'>
-          <ChromePicker color={ colorSelected } onChange={ handleChange } disableAlpha={true} />
+          <ChromePicker color={ colorSelected.hex } onChange={ handleChange } disableAlpha={true} />
         </div> 
       }
     </ColorPickerStyled>
