@@ -10,10 +10,10 @@ interface Props {
 
 const InputFile: React.FC<Props> = ({ icon, selectFile , size}) => {
 
-  const hiddenFileInput = React.useRef(null)
+  const hiddenFileInput = React.useRef<HTMLInputElement | null>(null);
   
   const handleClick = (event: any) => {
-    hiddenFileInput?.current?.click()
+    hiddenFileInput.current?.click();
   };
 
   const handleChange = (event: any) => {
